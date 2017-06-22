@@ -4,7 +4,7 @@ class PledgesController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
 
-    if current_user.id != @project.owner_id
+    if current_user.id != @project.owner
       @pledge = @project.pledges.build(pledge_params)
       @pledge.user = current_user
 
@@ -14,6 +14,8 @@ class PledgesController < ApplicationController
         flash.now[:alert] = @pledge.errors.full_messages.first
         render 'projects/show'
       end
+    else
+      return false
     end
   end
 

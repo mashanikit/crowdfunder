@@ -18,12 +18,13 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner = User.find(session[:user_id])
+
     if @project.save
       redirect_to projects_url
     else
       render :new
     end
-   end
+  end
 
   private
 
