@@ -18,19 +18,12 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     @project.owner = User.find(session[:user_id])
-    if @project.save #&& require_login
+    if @project.save
       redirect_to projects_url
     else
       render :new
     end
    end
-
-  # def require_login
-  #   unless logged_in?   # not signed in
-  #     redirect_to login_path
-  #   end
-  # end
-
 
   private
 
