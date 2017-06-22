@@ -1,13 +1,12 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class PledgeTest < ActiveSupport::TestCase
 
   test 'A pledge can be created' do
-    project = new_project
-    project.save
     pledge = Pledge.create(
       dollar_amount: 99.00,
-      project: project
+      project: new_project,
+      user: new_user
     )
     pledge.user = User.new
     pledge.save
@@ -16,7 +15,6 @@ class PledgeTest < ActiveSupport::TestCase
   end
 
   test 'owner cannot back own project' do
-    Project.destroy_all
     owner = new_user
     owner.save
     project = new_project
