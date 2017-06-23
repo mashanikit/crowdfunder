@@ -16,6 +16,7 @@ class PledgesController < ApplicationController
     end
   end
 
+
   private
 
   def pledge_params
