@@ -19,3 +19,10 @@ class ActionController::TestCase
   include Sorcery::TestHelpers::Rails::Integration
   include Sorcery::TestHelpers::Rails::Controller
 end
+
+
+class ActiveSupport::TestCase
+
+    include FactoryGirl::Syntax::Methods
+    
+  end

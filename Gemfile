@@ -15,6 +15,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Database
 gem 'pg'
+gem 'factory_girl_rails'
 
 # Authentication and authorization
 gem 'bcrypt', '~> 3.1.7'
