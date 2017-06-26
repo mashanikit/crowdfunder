@@ -1,9 +1,14 @@
-class CommentController < ApplicationController
-  class CommentsController < ApplicationController
+class CommentsController < ApplicationController
+
+    def new
+      @comment = Product.find(params[:product_id]).comments.new
+    end
+
+
 
     def create
       @project = Project.find(params[:project_id])
-      @comment = @project.commments.create(comment_params)
+      @comment = @project.comments.create(comment_params)
       if @comment.save
         flash[:notice] = "Your comment has been saved"
         redirect_to projects_path
@@ -41,7 +46,5 @@ class CommentController < ApplicationController
     def comment_params
       params.required(:comment).permit(:input)
     end
-
-  end
 
 end
