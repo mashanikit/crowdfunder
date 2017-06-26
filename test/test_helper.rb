@@ -20,16 +20,8 @@ class ActionController::TestCase
   include Sorcery::TestHelpers::Rails::Controller
 end
 
-<<<<<<< HEAD
+
 class ActiveSupport::TestCase
 
   include FactoryGirl::Syntax::Methods
 end
-=======
-
-class ActiveSupport::TestCase
-
-    include FactoryGirl::Syntax::Methods
-    
-  end
->>>>>>> doug1
