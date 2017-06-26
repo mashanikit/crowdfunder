@@ -4,7 +4,9 @@ class UserTest < ActiveSupport::TestCase
   test "email must be unique" do
 
     user = build(:user, email: "bettymaker@gmail.com", password: "12345678", password_confirmation: "12345678")
+    user.save
     user2 = build(:user, email: "bettymaker@gmail.com", password: "00000000", password_confirmation: "00000000")
+    user2.save
     refute user2.valid?
   end
 
