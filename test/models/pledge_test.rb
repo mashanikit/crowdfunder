@@ -22,6 +22,4 @@ class PledgeTest < ActiveSupport::TestCase
     assert pledge.invalid?, 'Owner should not be able to pledge towards own project'
   end
 
-
-
 end
