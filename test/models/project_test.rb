@@ -3,9 +3,9 @@ require 'test_helper'
 class ProjectTest < ActiveSupport::TestCase
 
   test 'valid project can be created' do
-    owner = build(:user)
+    owner = new_user
     owner.save
-    project = build(:project)
+    project = new_project
     project.owner = owner
     project.save
     assert project.valid?
@@ -14,7 +14,7 @@ class ProjectTest < ActiveSupport::TestCase
   end
 
   test 'project is invalid without owner' do
-    project = build(:project)
+    project = new_project
     project.owner = nil
     project.save
     assert project.invalid?, 'Project should not save without owner.'
