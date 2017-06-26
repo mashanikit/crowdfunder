@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   root "projects#index"
 
   get 'login' => 'user_sessions#new', :as => :login
-  get 'logout' => 'user_sessions#destroy', :as => :logout
-
+  delete 'logout' => 'user_sessions#destroy', :as => :logout
   get 'projects/show' => 'projects#show'
 
   resources :projects, only: [:index, :new, :create, :show] do
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
     resources :rewards, only: [:new, :create, :destroy]
   end
   resources :users, only: [:new, :create]
-  resources :user_sessions, only: [:create]
+  resources :user_sessions, only: [:new, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
