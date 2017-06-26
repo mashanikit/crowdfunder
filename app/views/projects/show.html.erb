@@ -28,9 +28,12 @@
 
 <%= link_to "Add new reward", new_project_reward_path(@project) %>
 
+<h2>Add a Comment</h2>
+
 <%= render 'form', comment: @comment %>
 
 <div class="Comments">
+
   <ol>
     <% @project.comments.each do |comment| %>
       <li>

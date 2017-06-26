@@ -27,6 +27,7 @@ class CommentController < ApplicationController
       end
     end
 
+
     def destroy
       @project = Project.find(params[:product_id])
       @comment = Comment.find(params[:id])
