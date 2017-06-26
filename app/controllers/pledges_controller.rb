@@ -18,6 +18,10 @@
       end
     end
 
+    def show
+      @project = Project.find(params[:project_id])
+      @pledge = @project.pledges.build(pledge_params)
+    end
 
   private
 
