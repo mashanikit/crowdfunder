@@ -1,3 +1,3 @@
 FactoryGirl.define do
-  factory :project
+  factory :reward
 end
