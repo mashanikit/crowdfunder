@@ -5,8 +5,8 @@ class Project < ActiveRecord::Base
   belongs_to :owner, class_name: 'User'
 
   validates :owner, :title, :description, :goal, :start_date, :end_date, presence: true
-  validates: :goal, , numericality: { greater_than: 0 }
-  validate: :start_date_not_in_past, :end_date_after_start_date
+  validates :goal, numericality: { greater_than: 0 }
+  validate :start_date_not_in_past, :end_date_after_start_date
 
   def start_date_not_in_past
     if start_date < Date.today
