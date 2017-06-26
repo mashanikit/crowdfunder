@@ -3,3 +3,8 @@ class Reward < ActiveRecord::Base
   validates :description, :dollar_amount, presence: true
 
 end
+
+
+
+
+# Reward dollar_amount must be positive number
