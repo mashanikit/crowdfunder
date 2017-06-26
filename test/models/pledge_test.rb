@@ -8,7 +8,7 @@ class PledgeTest < ActiveSupport::TestCase
     assert pledge1.valid?
   end
 
-test 'owner cannot back own project' do
+  test 'owner cannot back own project' do
     owner = new_user
     owner.save
     project = new_project
