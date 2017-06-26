@@ -21,6 +21,7 @@
   <p><% pledge_total += pledge.dollar_amount%></p>
 <% end %>
 <h4>Total Pledged: <%= number_to_currency(pledge_total) %></h4>
+<p><%= number_to_currency(@project.goal - pledge_total)%> away from goal of <%= number_to_currency(@project.goal) %></p>
 
 <h2>Rewards</h2>
 <% @project.rewards.each do |reward| %>
